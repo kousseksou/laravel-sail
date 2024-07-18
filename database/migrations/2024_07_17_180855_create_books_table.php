@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('reference');
-            $table->foreignId('store')->constrained('stores');
+            $table->foreignId('store_id')->constrained('stores');
             $table->timestamps();
         });
     }

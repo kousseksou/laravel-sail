@@ -5,7 +5,7 @@ namespace App\Models\Repositories;
 use App\Models\Attributes\Identifier;
 use App\Models\Attributes\ModelAttribute;
 use App\Models\Contracts\Collection;
-use App\Models\Contracts\Model;
+use App\Models\BaseModel as Model;
 use App\Models\Contracts\Repository;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Contracts\Support\Arrayable;
@@ -39,9 +39,6 @@ abstract class BaseModelRepository implements Repository
         return $results->first();
     }
 
-    /**
-     * @return Collection<TModel>
-     */
     public function findByAttribute(ModelAttribute ...$attributes): Collection
     {
         return new ArrayableCollection($this->withAttributes(...$attributes));

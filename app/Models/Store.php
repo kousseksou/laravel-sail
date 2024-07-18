@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Contracts\Model;
-use Illuminate\Database\Eloquent\Model as BaseModel;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Store extends BaseModel implements Model
+class Store extends BaseModel
 {
     protected $fillable = [
         'name',
